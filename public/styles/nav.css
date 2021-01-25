@@ -13,6 +13,8 @@ nav span{
   padding: 1.5em;
 }
 
-.write.new{
+.writeNew{
+  padding: 1.5em;
   font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.2rem;
 }

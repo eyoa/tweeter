@@ -29,5 +29,46 @@ body {
   margin: auto;
   font-family: 'Source Sans Pro', sans-serif;
   background-color:  #f4f1ec;
-  text-align: center;
+
+}
+
+form{
+  padding-top: 1em;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.formUtils{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 0.8rem;
+}
+
+
+label {
+  border-bottom: 10px;
+  border-color: #000000;
+  align-content: flex-start;
+  font-weight: bold;
+  
+}
+
+textarea {
+  background-color: #f4f1ec;
+  height: 1em;
+  border: transparent;
+  border-bottom: 4px solid #000000;
+}
+
+button {
+  background-color: #4056A1;
+  font-family: 'Bungee', sans-serif;
+  color: #FFFFFF;
+  font-size: medium;
+}
+
+.counter {
+  font-family: 'Bungee', sans-serif;
 }
