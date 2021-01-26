@@ -35,17 +35,20 @@ const renderTweets = function(tweets) {
   }
 };
 
-
+const loadtweets = function() {
+  $.ajax('/tweets/', {method: 'GET'})
+    .then(function(response) {
+      renderTweets(response);
+    });
+};
 
 $(document).ready(function() {
-  // renderTweets(data);
- 
+  loadtweets();
+
   const $newTweet = $("#new-tweet");
 
   $newTweet.on('submit', function(event) {
-    console.log('submit event detected');
     event.preventDefault();
-    console.log($(this).serialize());
     $.ajax({
       url: '/tweets/',
       type: 'post',
@@ -53,8 +56,7 @@ $(document).ready(function() {
       contentType: 'application/x-www-form-urlencoded'
     })
       .then(function(ar1, ar2, ar3) {
-        console.log(`probably submitted`);
-        console.log(`ar1 is ${ar1} ar2 is ${ar2} ar3 is ${ar3}`);
+        console.log('sent to the server success');
       });
 
   });
