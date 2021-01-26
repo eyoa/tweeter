@@ -55,11 +55,15 @@ label {
   
 }
 
-textarea {
+#tweet-text {
   background-color: #f4f1ec;
-  height: 1em;
+  height: 1.5em;
   border: transparent;
   border-bottom: 4px solid #000000;
+  overflow: auto;
+  font-size: medium;
+  word-wrap: break-word;
+  resize: none;
 }
 
 button {
