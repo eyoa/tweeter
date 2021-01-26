@@ -1,4 +1,4 @@
-header {
+header.header {
   height: 400px;
   width: 100%;
   display: flex;
@@ -7,6 +7,7 @@ header {
   align-items: center;
   background-color: #1bd1d1;
   background-image: url('../images/diagmonds.png');
+  margin-top: 120px;
 }
 
 h2 {

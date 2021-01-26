@@ -1,12 +1,14 @@
 nav{
   height: 120px;
-  width: auto;
+  width: 100%;
   background-color: #4056A1;
   font-family: 'Bungee', sans-serif;
   color: #FFFFFF;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top:0px;
 }
 
 nav span{

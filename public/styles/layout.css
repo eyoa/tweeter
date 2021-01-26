@@ -34,6 +34,7 @@ body {
 
 form{
   padding-top: 1em;
+  padding-bottom: 1em;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -48,8 +49,6 @@ form{
 
 
 label {
-  border-bottom: 10px;
-  border-color: #000000;
   align-content: flex-start;
   font-weight: bold;
   
@@ -59,7 +58,7 @@ label {
   background-color: #f4f1ec;
   height: 1.5em;
   border: transparent;
-  border-bottom: 4px solid #000000;
+  border-bottom: 4px solid  #545149;
   overflow: auto;
   font-size: medium;
   word-wrap: break-word;
