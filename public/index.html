@@ -34,7 +34,10 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
-      <span class="writeNew"><span><b>Write </b>a new tweet</span><i class="fas fa-angle-double-down "></i></span>
+      <span class="writeNew">
+        <span><b>Write </b>a new tweet</span>
+        <i class="fas fa-angle-double-down "></i>
+      </span>
     </nav>
 
     <header class="header">
@@ -49,7 +52,7 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section>
+      <section class = "new-tweet-container">
         <p class="errorMsg"><i class="fas fa-exclamation-triangle"></i></p>
         <form action= "/tweets/" method="POST" id="new-tweet">
           <label for="tweet-text">What are you humming about?</label>
@@ -64,6 +67,5 @@
       </section>
     </main>
     
-
   </body>
 </html>

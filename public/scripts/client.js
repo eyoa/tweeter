@@ -55,15 +55,35 @@ const loadtweets = function() {
 
 };
 
+
+
 $(document).ready(function() {
-  $('.errorMsg').hide();
-  loadtweets();
+  // make these easy to refer to
+  const newTweetCon = $('.new-tweet-container');
+  const errMsg = $('.errorMsg');
   
+  // Initialize state when page first loads
+  loadtweets();
+  errMsg.hide();
+  newTweetCon.hide();
+
+  //when nav button is clicked
+  $('.writeNew').children('.fas').on('click', function() {
+    if (newTweetCon.is(":visible")) {
+      newTweetCon.slideUp();
+    } else {
+      newTweetCon.slideDown();
+      $('#new-tweet').find('textarea').focus();
+    }
+  });
+
+
+  // submit to post new tweet
   const $newTweet = $("#new-tweet");
 
   $newTweet.on('submit', function(event) {
-    if ($('.errorMsg').is(":visible")) {
-      $('.errorMsg').hide();
+    if (errMsg.is(":visible")) {
+      errMsg.hide();
     }
 
     event.preventDefault();
@@ -72,15 +92,15 @@ $(document).ready(function() {
 
     if (tweetLength <= 0) {
       const $error = `<span> Tweet is empty </span>`;
-      $('.errorMsg').find('span').empty();
-      $('.errorMsg').append($error);
-      $('.errorMsg').slideDown();
+      errMsg.find('span').empty();
+      errMsg.append($error);
+      errMsg.slideDown();
       return;
     } else if (tweetLength > 140) {
       const $error = `<span> Tweet is longer than 140 chrs </span>`;
-      $('.errorMsg').find('span').empty();
-      $('.errorMsg').append($error);
-      $('.errorMsg').slideDown();
+      errMsg.find('span').empty();
+      errMsg.append($error);
+      errMsg.slideDown();
       return;
     } else {
       $.ajax({
