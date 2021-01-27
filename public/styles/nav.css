@@ -16,7 +16,36 @@ nav span{
 }
 
 .writeNew{
-  padding: 1.5em;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.writeNew span{
+  padding:5px;
+}
+
+.writeNew i {
+  align-self: center;
+  color: orange;
+  padding: 0 1em;
+}
+
+.writeNew i:hover {
+  color: #FFFFFF;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%{
+    transform: initial;
+  }
+  50%{
+    transform: translateY(10px);
+  }
+  100%{
+    transform: initial;
+  }
 }

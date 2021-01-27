@@ -44,11 +44,14 @@ const renderTweets = function(tweets) {
 
 // Ajax gets the objects from server
 const loadtweets = function() {
-  $.ajax('/tweets/', {method: 'GET'})
-    .then(function(response) {
+  $.ajax({
+    url: '/tweets/',
+    type: 'get'
+  })
+    .done(function(response) {
       renderTweets(response);
     })
-    .catch(err => console.log(err));
+    .fail(err => console.log(err));
 
 };
 
@@ -86,7 +89,7 @@ $(document).ready(function() {
         data: $(this).serialize(),
         contentType: 'application/x-www-form-urlencoded',
       })
-        .then(function() {
+        .done(function() {
           // empty the text field and reset counter for prettiness
           // clear existing tweets and reload including new one
           // kinda not efficient but it works.
@@ -95,7 +98,7 @@ $(document).ready(function() {
           $('.tweet-container').empty();
           loadtweets();
         })
-        .catch(err => console.log(err));
+        .fail(err => console.log(err));
     }
   });
 
