@@ -39,7 +39,9 @@ const loadtweets = function() {
   $.ajax('/tweets/', {method: 'GET'})
     .then(function(response) {
       renderTweets(response);
-    });
+    })
+    .catch(err => console.log(err));
+
 };
 
 $(document).ready(function() {
@@ -49,16 +51,29 @@ $(document).ready(function() {
 
   $newTweet.on('submit', function(event) {
     event.preventDefault();
-    $.ajax({
-      url: '/tweets/',
-      type: 'post',
-      data: $(this).serialize(),
-      contentType: 'application/x-www-form-urlencoded'
-    })
-      .then(function(ar1, ar2, ar3) {
-        console.log('sent to the server success');
-      });
+    const tweetLength = $(this).find('textarea').val().length;
 
+    console.log("try", tweetLength);
+
+    if (tweetLength <= 0) {
+      alert('Tweet is empty');
+      return;
+    } else if (tweetLength > 140) {
+      alert('Tweet is longer than 140 chrs');
+      return;
+    } else {
+      $.ajax({
+        url: '/tweets/',
+        type: 'post',
+        data: $(this).serialize(),
+        contentType: 'application/x-www-form-urlencoded',
+      })
+        .then(function() {
+          console.log('sent to the server success');
+          loadtweets();
+        })
+        .catch(err => console.log(err));
+    }
   });
 
   
