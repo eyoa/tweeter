@@ -80,3 +80,9 @@ button {
   display: flex;
   flex-direction: column-reverse;
 }
+
+.errorMsg {
+  border: 4px solid #f52d1f;
+  padding: 0.5em;
+  color: #f52d1f;
+}

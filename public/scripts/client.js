@@ -4,6 +4,13 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// prevent XSS by escaping text
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 // the tweet object info into tweet form (html)
 const createTweetElement = function(tweetData) {
   const timeAgo = moment(tweetData.created_at).fromNow();
@@ -16,7 +23,7 @@ const createTweetElement = function(tweetData) {
       </div>
       <span class="alias">${tweetData.user.handle}</span>
     </header>
-      <p class="content">${tweetData.content.text}</p>
+      <p class="content">${escape(tweetData.content.text)}</p>
     <footer>
       <span>${timeAgo}</span>
       <span><i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i></span>
@@ -46,20 +53,31 @@ const loadtweets = function() {
 };
 
 $(document).ready(function() {
+  $('.errorMsg').hide();
   loadtweets();
   
   const $newTweet = $("#new-tweet");
 
   $newTweet.on('submit', function(event) {
+    if ($('.errorMsg').is(":visible")) {
+      $('.errorMsg').hide();
+    }
+
     event.preventDefault();
     const textbox = $(this).find('textarea');
     const tweetLength = textbox.val().length;
 
     if (tweetLength <= 0) {
-      alert('Tweet is empty');
+      const $error = `<span> Tweet is empty </span>`;
+      $('.errorMsg').find('span').empty();
+      $('.errorMsg').append($error);
+      $('.errorMsg').slideDown();
       return;
     } else if (tweetLength > 140) {
-      alert('Tweet is longer than 140 chrs');
+      const $error = `<span> Tweet is longer than 140 chrs </span>`;
+      $('.errorMsg').find('span').empty();
+      $('.errorMsg').append($error);
+      $('.errorMsg').slideDown();
       return;
     } else {
       $.ajax({
