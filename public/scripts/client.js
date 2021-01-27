@@ -4,9 +4,9 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// the tweet object info into tweet form (html)
 const createTweetElement = function(tweetData) {
   const timeAgo = moment(tweetData.created_at).fromNow();
-
   const $tweet = $(`
     <article class="tweet">
     <header>
@@ -27,7 +27,7 @@ const createTweetElement = function(tweetData) {
   return $tweet;
 };
 
-
+// attaches array of tweet objects onto DOM
 const renderTweets = function(tweets) {
   for (const tweet of tweets) {
     const $tweet = createTweetElement(tweet);
@@ -35,6 +35,7 @@ const renderTweets = function(tweets) {
   }
 };
 
+// Ajax gets the objects from server
 const loadtweets = function() {
   $.ajax('/tweets/', {method: 'GET'})
     .then(function(response) {
@@ -46,14 +47,13 @@ const loadtweets = function() {
 
 $(document).ready(function() {
   loadtweets();
-
+  
   const $newTweet = $("#new-tweet");
 
   $newTweet.on('submit', function(event) {
     event.preventDefault();
-    const tweetLength = $(this).find('textarea').val().length;
-
-    console.log("try", tweetLength);
+    const textbox = $(this).find('textarea');
+    const tweetLength = textbox.val().length;
 
     if (tweetLength <= 0) {
       alert('Tweet is empty');
@@ -69,15 +69,17 @@ $(document).ready(function() {
         contentType: 'application/x-www-form-urlencoded',
       })
         .then(function() {
-          console.log('sent to the server success');
+          // empty the text field and reset counter for prettiness
+          // clear existing tweets and reload including new one
+          // kinda not efficient but it works.
+          textbox.val("");
+          textbox.parent().find('.counter').val(140);
+          $('.tweet-container').empty();
           loadtweets();
         })
         .catch(err => console.log(err));
     }
   });
-
-  
-
 
 
 });

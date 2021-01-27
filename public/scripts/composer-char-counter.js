@@ -1,7 +1,7 @@
 $(document).ready(function() {
   console.log("document is ready");
 
-  $("#tweet-text").on("input", function() {
+  $("#tweet-text").on("input change blur", function() {
     let charsLeft = 140 - ($(this).val().length);
     const countEle = $(this).parent().find(".counter");
     countEle.val(charsLeft);
