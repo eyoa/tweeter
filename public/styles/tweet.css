@@ -11,6 +11,7 @@
   font-weight:600;
 }
 
+
 article.tweet header {
   display: flex;
   flex-direction:row;
@@ -31,8 +32,9 @@ article.tweet header div{
 }
 
 .alias {
-  display: none;
+  /* display: none; */
   margin: 1.5em;
+  color: #858e9e;
 }
 
 

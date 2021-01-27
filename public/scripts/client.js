@@ -61,13 +61,15 @@ $(document).ready(function() {
   // make these easy to refer to
   const newTweetCon = $('.new-tweet-container');
   const errMsg = $('.errorMsg');
+  const toTopBtn = $('#toTopBtn');
   
   // Initialize state when page first loads
   loadtweets();
   errMsg.hide();
   newTweetCon.hide();
+  toTopBtn.hide();
 
-  //when nav button is clicked
+  // when nav button is clicked
   $('.writeNew').children('.fas').on('click', function() {
     if (newTweetCon.is(":visible")) {
       newTweetCon.slideUp();
@@ -77,6 +79,25 @@ $(document).ready(function() {
     }
   });
 
+  //when back to top button is clicked
+  toTopBtn.on('click', function() {
+    if (newTweetCon.is(":hidden")) {
+      newTweetCon.slideDown();
+    }
+    $(document).scrollTop(-($('nav').height()));
+    $('#new-tweet').find('textarea').focus();
+  });
+
+
+  // When scrolling show back to top button
+  $(document).on('scroll', function(event) {
+    if ($(this).scrollTop() > 420) {
+      newTweetCon.slideUp();
+      toTopBtn.show();
+    } else {
+      toTopBtn.hide();
+    }
+  });
 
   // submit to post new tweet
   const $newTweet = $("#new-tweet");
