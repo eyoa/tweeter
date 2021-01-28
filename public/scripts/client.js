@@ -69,8 +69,8 @@ $(document).ready(function() {
   newTweetCon.hide();
   toTopBtn.hide();
 
-  // when nav button is clicked
-  $('.writeNew').children('.fas').on('click', function() {
+  // when writeNew button is clicked
+  $('.writeNew').on('click', function() {
     if (newTweetCon.is(":visible")) {
       newTweetCon.slideUp();
     } else {
@@ -90,7 +90,7 @@ $(document).ready(function() {
 
 
   // When scrolling show back to top button
-  $(document).on('scroll', function(event) {
+  $(document).on('scroll', function() {
     if ($(this).scrollTop() > 400) {
       newTweetCon.slideUp();
       toTopBtn.show();

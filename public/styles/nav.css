@@ -4,15 +4,12 @@ nav{
   background-color: #4056A1;
   font-family: 'Bungee', sans-serif;
   color: #FFFFFF;
+  padding: 1.5em;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   top:0px;
-}
-
-nav span{
-  padding: 1.5em;
 }
 
 .writeNew{
@@ -23,17 +20,13 @@ nav span{
   justify-content: center;
 }
 
-.writeNew span{
-  padding:5px;
-}
-
 .writeNew i {
   align-self: center;
   color: orange;
-  padding: 0 1em;
+  padding: 0 2em;
 }
 
-.writeNew i:hover {
+.writeNew:hover i {
   color: #FFFFFF;
   animation: bounce 1s infinite;
 }
