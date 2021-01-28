@@ -1,0 +1,53 @@
+@use './colors';
+
+nav{
+  height: 120px;
+  width: 100%;
+  background-color: colors.$primary-color;
+  font-family: 'Bungee', sans-serif;
+  color: #FFFFFF;
+  padding: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top:0px;
+
+  .writeNew {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+    i{
+      align-self: center;
+      color: orange;
+      padding: 0 2em;
+    }
+    &:hover i{
+      color: #FFFFFF;
+      animation: bounce 1s infinite;
+    }
+  }
+}
+
+@keyframes bounce {
+  0%{
+    transform: initial;
+  }
+  50%{
+    transform: translateY(10px);
+  }
+  100%{
+    transform: initial;
+  }
+}
+
+@media only screen and (max-width: 480px){
+  nav {
+    background-color: colors.$header-color;
+    background-image: url('../images/diagmonds.png');
+    height: 100px;
+  }
+}

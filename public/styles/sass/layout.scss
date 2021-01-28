@@ -1,0 +1,155 @@
+@use './colors';
+
+@mixin dblAxisCenter() {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+
+body {
+  color: #545149;
+  background-color: colors.$background-color;
+  font-size: 24px;
+}
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+ 
+ .container {
+   width: 90%;
+   margin: auto;
+   font-family: 'Source Sans Pro', sans-serif;
+   background-color:  colors.$background-color;
+   
+
+  form{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    
+    label {
+      align-content: flex-start;
+      font-weight: bold;
+      
+    }
+  }
+
+}
+
+.new-tweet-container{
+  margin: 1em;
+
+  .errorMsg {
+    border: 4px solid #f52d1f;
+    padding: 0.5em;
+    color: #f52d1f;
+  }
+  
+}
+
+#tweet-text {
+  background-color: colors.$background-color;
+  height: 1.5em;
+  border: transparent;
+  border-bottom: 4px solid  #545149;
+  overflow: auto;
+  font-size: medium;
+  word-wrap: break-word;
+  resize: none;
+}
+
+#tweet-text:focus{
+  outline: 0;
+}
+
+.formUtils{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 0.8rem;
+
+  button {
+    background-color: colors.$primary-color;
+    font-family: 'Bungee', sans-serif;
+    color: #FFFFFF;
+    font-size: medium;
+  }
+  
+  .counter {
+    font-family: 'Bungee', sans-serif;
+  }
+}
+
+
+.tweets-container{
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+
+#toTopBtn {
+  border-radius: 50%;
+  height: 5rem;
+  width: 5rem;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  box-shadow: 0 8px 16px 0 #7c776a;
+  background-color: #4056A1;
+  
+  i {
+    @include dblAxisCenter();
+    color: orange;
+  }
+
+}
+
+#toTopBtn:hover{
+  height: 6rem;
+  width: 6rem;
+
+}
+
+#toTopBtn:focus{
+  outline: 0;
+  background-color: #374a8b;
+}
+
+/* Desktop screen sizes*/
+@media only screen and (min-width: 1024px){
+  body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .container{
+    margin: 120px 2rem;
+  
+    flex-basis: 60%;
+  }
+
+}

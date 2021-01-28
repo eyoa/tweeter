@@ -1,52 +1,50 @@
-nav{
+nav {
   height: 120px;
   width: 100%;
   background-color: #4056A1;
-  font-family: 'Bungee', sans-serif;
+  font-family: "Bungee", sans-serif;
   color: #FFFFFF;
   padding: 1.5em;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  top:0px;
+  top: 0px;
 }
-
-.writeNew{
-  font-family: 'Source Sans Pro', sans-serif;
+nav .writeNew {
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 1.2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-
-.writeNew i {
+nav .writeNew i {
   align-self: center;
   color: orange;
   padding: 0 2em;
 }
-
-.writeNew:hover i {
+nav .writeNew:hover i {
   color: #FFFFFF;
   animation: bounce 1s infinite;
 }
 
 @keyframes bounce {
-  0%{
+  0% {
     transform: initial;
   }
-  50%{
+  50% {
     transform: translateY(10px);
   }
-  100%{
+  100% {
     transform: initial;
   }
 }
-
-@media only screen and (max-width: 480px){
+@media only screen and (max-width: 480px) {
   nav {
     background-color: #1bd1d1;
-    background-image: url('../images/diagmonds.png');
+    background-image: url("../images/diagmonds.png");
     height: 100px;
   }
 }
+
+/*# sourceMappingURL=nav.css.map */

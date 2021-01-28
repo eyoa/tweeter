@@ -6,7 +6,6 @@
 html {
   box-sizing: border-box;
 }
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -14,6 +13,7 @@ html {
 /*
  * Global layout stuff
  */
+
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -23,67 +23,77 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
 .container {
   width: 90%;
   margin: auto;
-  font-family: "Source Sans Pro", sans-serif;
-  background-color: #f4f1ec;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color:  #f4f1ec;
+
 }
-.container form {
+
+form{
   padding-top: 1em;
   padding-bottom: 1em;
   margin: auto;
   display: flex;
   flex-direction: column;
 }
-.container form label {
-  align-content: flex-start;
-  font-weight: bold;
+
+.formUtils{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 0.8rem;
 }
 
-.new-tweet-container {
-  margin: 1em;
-}
-.new-tweet-container .errorMsg {
-  border: 4px solid #f52d1f;
-  padding: 0.5em;
-  color: #f52d1f;
+
+label {
+  align-content: flex-start;
+  font-weight: bold;
+  
 }
 
 #tweet-text {
   background-color: #f4f1ec;
   height: 1.5em;
   border: transparent;
-  border-bottom: 4px solid #545149;
+  border-bottom: 4px solid  #545149;
   overflow: auto;
   font-size: medium;
   word-wrap: break-word;
   resize: none;
 }
 
-#tweet-text:focus {
+.new-tweet-container{
+  margin: 1em;
+}
+
+#tweet-text:focus{
   outline: 0;
 }
 
-.formUtils {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 0.8rem;
-}
-.formUtils button {
+button {
   background-color: #4056A1;
-  font-family: "Bungee", sans-serif;
+  font-family: 'Bungee', sans-serif;
   color: #FFFFFF;
   font-size: medium;
 }
-.formUtils .counter {
-  font-family: "Bungee", sans-serif;
+
+.counter {
+  font-family: 'Bungee', sans-serif;
 }
 
-.tweets-container {
+
+.tweets-container{
   display: flex;
   flex-direction: column-reverse;
+}
+
+.errorMsg {
+  border: 4px solid #f52d1f;
+  padding: 0.5em;
+  color: #f52d1f;
 }
 
 #toTopBtn {
@@ -95,7 +105,21 @@ body {
   right: 15px;
   box-shadow: 0 8px 16px 0 #7c776a;
   background-color: #4056A1;
+  /* display: flex;
+  justify-content: center; */
 }
+
+#toTopBtn:hover{
+  height: 6rem;
+  width: 6rem;
+
+}
+
+#toTopBtn:focus{
+  outline: 0;
+  background-color: #374a8b;
+}
+
 #toTopBtn i {
   margin: 0;
   position: absolute;
@@ -106,28 +130,19 @@ body {
   color: orange;
 }
 
-#toTopBtn:hover {
-  height: 6rem;
-  width: 6rem;
-}
-
-#toTopBtn:focus {
-  outline: 0;
-  background-color: #374a8b;
-}
 
 /* Desktop screen sizes*/
-@media only screen and (min-width: 1024px) {
-  body {
+@media only screen and (min-width: 1024px){
+  body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
-
-  .container {
+  
+  .container{
     margin: 120px 2rem;
+  
     flex-basis: 60%;
   }
-}
 
-/*# sourceMappingURL=layout.css.map */
+}
