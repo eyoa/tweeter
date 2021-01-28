@@ -1,5 +1,5 @@
 header.header {
-  height: 400px;
+  height: 200px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -7,18 +7,36 @@ header.header {
   align-items: center;
   background-color: #1bd1d1;
   background-image: url('../images/diagmonds.png');
-  margin-top: 120px;
+  margin-top: 100px;
 }
 
 h2 {
   align-self: center;
   color: #FFFFFF;
+  margin: auto;
+}
+
+header img{
+  height: 100px;
+  width: 100px;
+  /* align-self: center; */
+}
+
+/* Tablet screen sizes  */
+@media only screen and (min-width: 480px) and (max-width: 1024px){
+  header.header{
+    height: 400px;
+    margin-top: 120px;
+  }  
+  header img{
+    height: 100%;
+    width: 100%;
+  }
 }
 
 /* Desktop screen sizes*/
 @media only screen and (min-width: 1024px){
   header.header {
-    /* margin-top: 200px; */
     margin: 200px 5rem 5rem;
     height: 400px;
     flex-basis: 40%;

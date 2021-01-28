@@ -54,12 +54,12 @@ article footer {
 }
 
 article.tweet footer i{
-  margin-right: 0.5em;
+  margin-right: 0.5rem;
   color: #4056A1;
 }
 
 article.tweet footer span{
-  padding: 0.5em 1.5em 0.5em 1.5em;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
   font-size: small;
 }
 
@@ -69,4 +69,27 @@ article.tweet footer span{
 
 .tweet:hover .icons{
   display: block;
+}
+
+@media only screen and (max-width: 480px){
+  article.tweet header {
+    flex-direction: column;
+  }
+
+  .avatar{
+    margin: 12px;
+  }
+
+  .name{
+    margin: 7px;
+  }
+
+  .alias{
+    margin: 5px 1.5rem;
+  }
+
+  article.tweet footer {
+    flex-direction: column;
+  }
+
 }

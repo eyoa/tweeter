@@ -42,3 +42,11 @@ nav{
     transform: initial;
   }
 }
+
+@media only screen and (max-width: 480px){
+  nav {
+    background-color: #1bd1d1;
+    background-image: url('../images/diagmonds.png');
+    height: 100px;
+  }
+}
