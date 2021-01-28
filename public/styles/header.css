@@ -41,5 +41,10 @@ header img{
     height: 400px;
     flex-basis: 40%;
   }
+  
+  header img{
+    height: 100%;
+    width: 100%;
+  }
 }
 
