@@ -22,7 +22,13 @@ A hands on project mainly practicing HTML, CSS, JS, JQuery and AJAX front-end sk
 - nodemon
 
 ## Screenshots
-!["screenshot of "]()
+!["screenshot of mobile/tablet layout "](https://github.com/eyoa/tweeter/blob/master/public/images/smallerLayout.png?raw=true)
+!["screenshot of desktop layout "](https://github.com/eyoa/tweeter/blob/master/public/images/desktopLayout.png?raw=true)
+!["screenshot of counter"](https://github.com/eyoa/tweeter/blob/master/public/images/desktopLayout.png?raw=true)
+!["screenshot of error message display "](https://github.com/eyoa/tweeter/blob/master/public/images/errorMsg.png?raw=true)
+!["screenshot of back to top button "](https://github.com/eyoa/tweeter/blob/master/public/images/backToTop.png?raw=true)
+
+
 
 ## Features
 - Character counter
