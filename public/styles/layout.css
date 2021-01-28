@@ -64,6 +64,11 @@ label {
   word-wrap: break-word;
   resize: none;
 }
+
+.new-tweet-container{
+  margin: 1em;
+}
+
 #tweet-text:focus{
   outline: 0;
 }
@@ -78,6 +83,7 @@ button {
 .counter {
   font-family: 'Bungee', sans-serif;
 }
+
 
 .tweets-container{
   display: flex;
@@ -117,4 +123,20 @@ button {
 #toTopBtn i {
   align-self:center;
   color: orange;
+}
+
+/* Desktop screen sizes*/
+@media only screen and (min-width: 1024px){
+  body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .container{
+    margin: 120px 2rem;
+  
+    flex-basis: 60%;
+  }
+
 }

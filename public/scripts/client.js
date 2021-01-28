@@ -26,7 +26,7 @@ const createTweetElement = function(tweetData) {
       <p class="content">${escape(tweetData.content.text)}</p>
     <footer>
       <span>${timeAgo}</span>
-      <span><i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i></span>
+      <span class="icons"><i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i></span>
     </footer>
   </article>
 
@@ -91,7 +91,7 @@ $(document).ready(function() {
 
   // When scrolling show back to top button
   $(document).on('scroll', function(event) {
-    if ($(this).scrollTop() > 420) {
+    if ($(this).scrollTop() > 400) {
       newTweetCon.slideUp();
       toTopBtn.show();
     } else {

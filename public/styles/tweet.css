@@ -6,11 +6,10 @@
   margin: 1em;
 }
 
-.tweet:hover {
+.tweet:hover{
   box-shadow: 5px 5px 5px#858e9e;
   font-weight:600;
 }
-
 
 article.tweet header {
   display: flex;
@@ -32,7 +31,6 @@ article.tweet header div{
 }
 
 .alias {
-  /* display: none; */
   margin: 1.5em;
   color: #858e9e;
 }
@@ -63,4 +61,12 @@ article.tweet footer i{
 article.tweet footer span{
   padding: 0.5em 1.5em 0.5em 1.5em;
   font-size: small;
+}
+
+.icons{
+  display: none;
+}
+
+.tweet:hover .icons{
+  display: block;
 }
